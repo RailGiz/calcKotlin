@@ -31,7 +31,18 @@ fun main() = singleWindowApplication {
         start = Offset(0f, 0f),
         end = Offset(1000f, 1000f),
         tileMode = TileMode.Clamp
-    )), contentAlignment = Alignment.Center) {
+    )), contentAlignment = Alignment.Center)
+
+    {
+        Box(
+            modifier = Modifier
+                .wrapContentSize(align = Alignment.TopStart)
+                .size(350.dp, 430.dp) // Фиксированный размер
+                .background(Color(0xfffaf8f8).copy(alpha = 0.5f), shape = RoundedCornerShape(16.dp)) // Установка альфа-компонента на 0.5 (50% прозрачности)
+                .blur(50.dp) // Добавление эффекта размытия
+        )
+
+
         Column(
 
             verticalArrangement = Arrangement.Center,
